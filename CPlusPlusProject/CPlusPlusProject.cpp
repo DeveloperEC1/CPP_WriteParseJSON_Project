@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "C:\Users\EliorCohen\Desktop\C_Libraries\json-master\Json.hpp"
+#include "json\Json.hpp"
 
 int main()
 {
