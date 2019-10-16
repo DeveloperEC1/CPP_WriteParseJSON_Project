@@ -1,0 +1,5 @@
+﻿  CPlusPlusProject.cpp
+  Source.cpp
+  Generating Code...
+C:\Users\EliorCohen\Desktop\C_Libraries\json-master\Json.hpp(641,46): warning C4244: 'return': conversion from 'const double' to '__int64', possible loss of data
+  CPlusPlusProject.vcxproj -> C:\Users\EliorCohen\Desktop\CPlusPlusProject\Debug\CPlusPlusProject.exe
