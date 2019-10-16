@@ -1,13 +1,11 @@
 #include <iostream>
 #include <string>
-#include "json\Json.hpp"
+#include "jsonr\Json.hpp"
 
-int main()
-{
+int main() {
 	auto obj = Json::CreateJson<Json::Object>();
 
-	if (obj)
-	{
+	if (obj) {
 		auto& object = *obj;
 		object["Name"] = Json::CreateJson<Json::String>("EliorCohen");
 		object["Number"] = Json::CreateJson<Json::Number>(12345);
@@ -17,8 +15,7 @@ int main()
 
 		// fill array
 		auto arrayPtr = Json::ConvertJson<Json::Array>(array);
-		for (auto i = 0; i < 10; ++i)
-		{
+		for (auto i = 0; i < 10; ++i) {
 			arrayPtr->push_back(Json::CreateJson<Json::Number>(i));
 		}
 
@@ -27,8 +24,7 @@ int main()
 		writer.write("myJSON.json", obj);
 	}
 
-	try
-	{
+	try {
 		// read
 		Json::FileReader reader;
 		auto obj = Json::ConvertJson<Json::Object>(reader.parseFile("myJSON.json"));
@@ -43,8 +39,7 @@ int main()
 
 		auto arrayPtr = obj->get<Json::Array>("Array");
 
-		if (arrayPtr)
-		{
+		if (arrayPtr) {
 			auto const& array = *arrayPtr;
 			for (auto i = 0U; i < array.count(); ++i)
 			{
@@ -53,8 +48,7 @@ int main()
 			}
 		}
 	}
-	catch (Json::ParserException const& e)
-	{
+	catch (Json::ParserException const& e) {
 		std::cout << e.getMessage() << std::endl;
 	}
 
