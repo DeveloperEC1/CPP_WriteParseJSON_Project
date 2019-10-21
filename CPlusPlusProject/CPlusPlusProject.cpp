@@ -41,7 +41,7 @@ int main() {
 
 		if (arrayPtr) {
 			auto const& array = *arrayPtr;
-			for (auto i = 0U; i < array.count(); ++i)
+			for (auto i = 0; i < array.count(); ++i)
 			{
 				auto item = Json::ConvertJson<Json::Number>(array[i])->toLongLong();
 				std::cout << "Array Numbers[" << i << "]: " << i << std::endl;
